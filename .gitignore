@@ -1,0 +1,12 @@
+# Project exclude paths
+/.gradle/
+/Simple Banking System/task/build/
+/Simple Banking System/task/build/classes/java/build/
+/Simple Banking System/task/build/generated/sources/annotationProcessor/java/build/
+/Simple Banking System/task/build/generated/sources/headers/java/build/
+/Simple Banking System/task/build/reports/tests/build/
+/Simple Banking System/task/build/test-results/build/
+/Simple Banking System/task/build/tmp/build/
+/Simple Banking System/task/out/build/
+/Simple Banking System/task/out/production/classes/
+/util/build/
