@@ -1,23 +1,24 @@
 package banking;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 public class Main {
 
     protected static boolean flag;
     protected static String cardNum;
     protected static String cardPin;
+
     public static void main(String[] args) {
 
         Database db = new Database();
 
-        if (args.length > 1 ){
+        if (args.length > 1) {
             db.createDatabase(args[1]);
         }
         db.createTable();
 
         Scanner scan = new Scanner(System.in);
         Outerloop:
-        while(true) {
+        while (true) {
             System.out.println(" 1. Create an account\n 2. Log into account\n 0. Exit");
             System.out.println();
             int input = scan.nextInt();
@@ -28,9 +29,9 @@ public class Main {
                 break;
             }
 
-            switch(input) {
+            switch (input) {
                 case 1:
-                    BankAccount entry  = new BankAccount();
+                    BankAccount entry = new BankAccount();
                     entry.createAccount();
                     System.out.println();
                     break;
@@ -41,12 +42,7 @@ public class Main {
                     System.out.println("Enter your PIN:");
                     long inputPin = scan.nextInt();
                     cardPin = String.valueOf(inputPin);
-                    do {
-                        db.results(cardNum, cardPin);
-                        flag = false;
-                    } while(flag);
-
-
+                    db.results(cardNum, cardPin);
 
 
             }
@@ -56,29 +52,9 @@ public class Main {
 
     }
 
-
-
-
+    public String firstCardNum() {
+        String firstCCNum = cardNum;
+        return firstCCNum;
+    }
 
 }
-/*
-   if(foundCard && foundPin) {
-           System.out.println("You have successfully logged in!");
-           System.out.println();
-           flag = true;
-           do {
-           System.out.println(" 1. Balance\n 2. Log out\n 0. Exit");
-           int inputTwo = scan.nextInt();
-           if(inputTwo == 1) {
-           System.out.println(entryTwo.getBalance());
-           } else if (inputTwo == 2) {
-           flag =false;
-           } else {
-           System.out.println("Bye!");
-           break Outerloop;
-           }
-           } while(flag);
-           } else {
-           System.out.println("Wrong card number or PIN!");
-           System.out.println();
-           } */
